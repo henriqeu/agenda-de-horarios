@@ -1,0 +1,138 @@
+<ion-content class="ion-margin">
+  <ion-item class="ion-labelGroup" lines="none">
+
+    <ion-item>
+      <ion-text>Segunda</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-text style="color: #4e68be; font-style: italic; font-weight: bold; font-size: 17px;">Terça</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-text>Quarta</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-text>Quinta</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-text>Sexta</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-text>Sabádo</ion-text>
+    </ion-item>
+
+
+  </ion-item>
+
+
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Horário</ion-col>
+      <ion-col>Name</ion-col>
+      <ion-col>Number</ion-col>
+      <ion-col>Obs</ion-col>
+      <ion-col size="2">Actions</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>10:00, seg</ion-col>
+      <ion-col>Luan</ion-col>
+      <ion-col>43984293086</ion-col>
+      <ion-col>Social</ion-col>
+      <ion-col size="2">
+        <ion-icon size="2" name="close-circle-outline"></ion-icon>
+        <ion-icon size="3" name="create-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>10:00, seg</ion-col>
+      <ion-col>Luan</ion-col>
+      <ion-col>43984293086</ion-col>
+      <ion-col>Social</ion-col>
+      <ion-col size="2">
+        <ion-icon size="2" name="close-circle-outline"></ion-icon>
+        <ion-icon size="3" name="create-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <pre>
+      {{  form |  json }}
+    </pre>
+
+  </ion-grid>
+
+</ion-content>
+
+
+
+<ion-footer collapse="fade">
+  <ion-toolbar>
+
+    <ion-button color="white" size="small" slot="start" [routerLink]="['/home']">Voltar
+      <ion-icon name="home" slot="end"></ion-icon>
+    </ion-button>
+
+    <ion-button id="open-modal" color="primary" size="small" slot="end" [routerLink]="['/#']">Novo Horário
+
+      <ion-modal trigger="open-modal">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="cancel()">Voltar</ion-button>
+              </ion-buttons>
+              <ion-title>Preencha com as informações do horário</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="confirm()" [strong]="true">Salvar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+
+            <ion-item>
+              <ion-label>Defina uma data</ion-label>
+              <ion-input value="{{ form.horario | date : 'EEEE dd/MM, HH:mm' : '' : 'pt-BR'}}" id="date"
+                class="ion-text-end"></ion-input>
+              <ion-popover trigger="date" size="cover">
+
+                <ng-template>
+                  <ion-datetime [(ngModel)]="form.horario" locale="pt-BR" min="2022-01-01"
+                    max="2023-12-12"></ion-datetime>
+                </ng-template>
+
+              </ion-popover>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Nome</ion-label>
+              <ion-input [(ngModel)]="form.nome" value="{{ form.nome }}" class="ion-text-end"></ion-input>
+
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Número</ion-label>
+              <ion-input  type="number" [(ngModel)]="form.numero" value="{{ form.numero }}" class="ion-text-end"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Observações</ion-label>
+              <ion-input [(ngModel)]="form.obs" value="{{ form.obs }}" class="ion-text-end"></ion-input>
+            </ion-item>
+
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+
+      <ion-icon name="home" slot="end"></ion-icon>
+    </ion-button>
+
+    <ion-button color="danger" size="small" slot="end" (click)="clear(form)">Limpar a lista
+      <ion-icon name="home" slot="end"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>

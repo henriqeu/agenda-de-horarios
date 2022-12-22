@@ -1,0 +1,7 @@
+{
+  "name": "AgendaDeHorários",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
