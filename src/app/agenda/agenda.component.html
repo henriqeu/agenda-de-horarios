@@ -6,7 +6,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-text style="color: #4e68be; font-style: italic; font-weight: bold; font-size: 17px;">Terça</ion-text>
+      <ion-text style="color: #4e68be; font-weight: bold; font-size: 16px;">Terça</ion-text>
     </ion-item>
 
     <ion-item>
@@ -30,34 +30,37 @@
 
 
   <ion-grid class="ion-margin">
-    <ion-row>
-      <ion-col>Horário</ion-col>
-      <ion-col>Name</ion-col>
-      <ion-col>Number</ion-col>
-      <ion-col>Obs</ion-col>
-      <ion-col size="2">Actions</ion-col>
+    <ion-row >
+      <ion-col class="labelGrid">Horário</ion-col>
+      <ion-col class="labelGrid">Name</ion-col>
+      <ion-col class="labelGrid">Number</ion-col>
+      <ion-col class="labelGrid">Obs</ion-col>
+      <ion-col class="labelGrid">Actions</ion-col>
     </ion-row>
+
     <ion-row>
-      <ion-col>10:00, seg</ion-col>
-      <ion-col>Luan</ion-col>
-      <ion-col>43984293086</ion-col>
-      <ion-col>Social</ion-col>
-      <ion-col size="2">
-        <ion-icon size="2" name="close-circle-outline"></ion-icon>
-        <ion-icon size="3" name="create-outline"></ion-icon>
+      <ion-col class="valueGrid">10:00, seg</ion-col>
+      <ion-col class="valueGrid">Luan</ion-col>
+      <ion-col class="valueGrid">43984293086</ion-col>
+      <ion-col class="valueGrid">Social</ion-col>
+      <ion-col class="valueGrid">
+        <ion-icon size="small" name="close-circle-outline"></ion-icon>
+        <ion-icon size="small" name="create-outline"></ion-icon>
       </ion-col>
     </ion-row>
 
     <ion-row>
-      <ion-col>10:00, seg</ion-col>
-      <ion-col>Luan</ion-col>
-      <ion-col>43984293086</ion-col>
-      <ion-col>Social</ion-col>
-      <ion-col size="2">
-        <ion-icon size="2" name="close-circle-outline"></ion-icon>
-        <ion-icon size="3" name="create-outline"></ion-icon>
+      <ion-col class="valueGrid">10:00, seg</ion-col>
+      <ion-col class="valueGrid">Luan</ion-col>
+      <ion-col class="valueGrid">43984293086</ion-col>
+      <ion-col class="valueGrid">Social</ion-col>
+      <ion-col class="valueGrid">
+        <ion-icon size="small" name="close-circle-outline"></ion-icon>
+        <ion-icon size="small" name="create-outline"></ion-icon>
       </ion-col>
     </ion-row>
+
+
     <pre>
       {{  form |  json }}
     </pre>
@@ -130,9 +133,7 @@
       <ion-icon name="home" slot="end"></ion-icon>
     </ion-button>
 
-    <ion-button color="danger" size="small" slot="end" (click)="clear(form)">Limpar a lista
-      <ion-icon name="home" slot="end"></ion-icon>
-    </ion-button>
+
 
   </ion-toolbar>
 </ion-footer>
